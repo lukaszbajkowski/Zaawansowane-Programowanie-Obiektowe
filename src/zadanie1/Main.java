@@ -12,7 +12,7 @@ public class Main {
         knight.performAttack();
         gunner.performAttack();
 
-        shooter.setAttackStrategy(new GunnerAttack());
+        shooter.setAttack(new GunnerAttack());
         shooter.performAttack();
     }
 }

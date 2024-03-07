@@ -7,7 +7,7 @@ public class Character {
         this.attackStrategy = attackStrategy;
     }
 
-    public void setAttackStrategy(AttackStrategy attackStrategy) {
+    public void setAttack(AttackStrategy attackStrategy) {
         this.attackStrategy = attackStrategy;
     }
 
