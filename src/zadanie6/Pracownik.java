@@ -1,6 +1,6 @@
 package zadanie6;
 
-public class Pracownik implements Dojezdzac, SpedzanieWolnegoCzasu, Pracowac {
+public class Pracownik {
     private String zawod;
     private final Dojezdzac dojezdzac;
     private final SpedzanieWolnegoCzasu spedzanieWolnegoCzasu;
@@ -21,17 +21,14 @@ public class Pracownik implements Dojezdzac, SpedzanieWolnegoCzasu, Pracowac {
         return zawod;
     }
 
-    @Override
     public void dojezdzaj() {
         dojezdzac.dojezdzaj();
     }
 
-    @Override
     public void spedzajWolnyCzas() {
         spedzanieWolnegoCzasu.spedzajWolnyCzas();
     }
 
-    @Override
     public void pracuj() {
         pracowac.pracuj();
     }
