@@ -1,5 +1,5 @@
 package zadanie5;
 
-public interface TaxStrategy {
+public interface Tax {
     double calculateTax(double price);
 }

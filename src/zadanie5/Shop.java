@@ -5,15 +5,15 @@ public class Shop {
 
         OnlineShop onlineShop = new OnlineShop(10.0, 10.0, 10.0);
 
-        onlineShop.setTaxStrategy(new TaxPolandStrategy());
+        onlineShop.setTax(new TaxPL());
         double pricePL = onlineShop.getPricePL();
         System.out.println("PL " + pricePL);
 
-        onlineShop.setTaxStrategy(new TaxGBStrategy());
+        onlineShop.setTax(new TaxGB());
         double priceGB = onlineShop.getPriceGB();
         System.out.println("GB " + priceGB);
 
-        onlineShop.setTaxStrategy(new TaxDStrategy());
+        onlineShop.setTax(new TaxD());
         double priceD = onlineShop.getPriceD();
         System.out.println("D " + priceD);
     }

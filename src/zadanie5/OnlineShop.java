@@ -5,7 +5,7 @@ public class OnlineShop {
     private final double priceGB;
     private final double priceD;
 
-    private TaxStrategy taxStrategy;
+    private Tax tax;
 
     public OnlineShop(double pricePL, double priceGB, double priceD) {
         this.pricePL = pricePL;
@@ -13,31 +13,31 @@ public class OnlineShop {
         this.priceD = priceD;
     }
 
-    public void setTaxStrategy(TaxStrategy taxStrategy) {
-        this.taxStrategy = taxStrategy;
+    public void setTax(Tax tax) {
+        this.tax = tax;
     }
 
     public double getPricePL() {
-        if (taxStrategy == null) {
+        if (tax == null) {
             throw new IllegalStateException("Tax strategy not set");
         }
 
-        return pricePL + taxStrategy.calculateTax(pricePL);
+        return pricePL + tax.calculateTax(pricePL);
     }
 
     public double getPriceGB() {
-        if (taxStrategy == null) {
+        if (tax == null) {
             throw new IllegalStateException("Tax strategy not set");
         }
 
-        return priceGB + taxStrategy.calculateTax(priceGB);
+        return priceGB + tax.calculateTax(priceGB);
     }
 
     public double getPriceD() {
-        if (taxStrategy == null) {
+        if (tax == null) {
             throw new IllegalStateException("Tax strategy not set");
         }
 
-        return priceD + taxStrategy.calculateTax(priceD);
+        return priceD + tax.calculateTax(priceD);
     }
 }

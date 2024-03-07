@@ -1,8 +1,8 @@
 package zadanie5;
 
-public class TaxPolandStrategy implements TaxStrategy {
+public class TaxGB implements Tax {
     @Override
     public double calculateTax(double price) {
-        return price * 0.23;
+        return price * 0.2;
     }
 }
