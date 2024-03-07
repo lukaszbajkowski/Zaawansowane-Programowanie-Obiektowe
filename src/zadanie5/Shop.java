@@ -3,16 +3,18 @@ package zadanie5;
 public class Shop {
     public static void main(String[] args) {
 
-        OnlineShop polandShop = new OnlineShop(new TaxPoland());
-        double pricePL = polandShop.recalculateProductValue(10.0);
+        OnlineShop onlineShop = new OnlineShop(10.0, 10.0, 10.0);
+
+        onlineShop.setTaxStrategy(new TaxPolandStrategy());
+        double pricePL = onlineShop.getPricePL();
         System.out.println("PL " + pricePL);
 
-        OnlineShop gbShop = new OnlineShop(new TaxGB());
-        double priceGB = gbShop.recalculateProductValue(10.0);
+        onlineShop.setTaxStrategy(new TaxGBStrategy());
+        double priceGB = onlineShop.getPriceGB();
         System.out.println("GB " + priceGB);
 
-        OnlineShop germanShop = new OnlineShop(new TaxD());
-        double priceD = germanShop.recalculateProductValue(10.0);
+        onlineShop.setTaxStrategy(new TaxDStrategy());
+        double priceD = onlineShop.getPriceD();
         System.out.println("D " + priceD);
     }
 }
