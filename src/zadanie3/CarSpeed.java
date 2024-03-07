@@ -1,3 +1,4 @@
+// CarSpeed.java
 package zadanie3;
 
 public class CarSpeed {
@@ -15,3 +16,4 @@ public class CarSpeed {
         System.out.println(car.getCarName());
     }
 }
+
