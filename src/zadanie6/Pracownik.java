@@ -1,20 +1,16 @@
 package zadanie6;
 
 public class Pracownik {
-    private String zawod;
-    private final Dojezdzac dojezdzac;
-    private final SpedzanieWolnegoCzasu spedzanieWolnegoCzasu;
-    private final Pracowac pracowac;
+    String zawod;
+    Dojezdzac dojezdzac;
+    SpedzanieWolnegoCzasu spedzanieWolnegoCzasu;
+    Pracowac pracowac;
 
     public Pracownik(String zawod, Dojezdzac dojezdzac, SpedzanieWolnegoCzasu spedzanieWolnegoCzasu, Pracowac pracowac) {
         this.zawod = zawod;
         this.dojezdzac = dojezdzac;
         this.spedzanieWolnegoCzasu = spedzanieWolnegoCzasu;
         this.pracowac = pracowac;
-    }
-
-    public void setZawod(String zawod) {
-        this.zawod = zawod;
     }
 
     public String getZawod() {
