@@ -1,43 +1,32 @@
 package zadanie5;
 
 public class OnlineShop {
-    private final double pricePL;
-    private final double priceGB;
-    private final double priceD;
-
     private Tax tax;
 
-    public OnlineShop(double pricePL, double priceGB, double priceD) {
-        this.pricePL = pricePL;
-        this.priceGB = priceGB;
-        this.priceD = priceD;
+    public OnlineShop(Tax tax) {
+        this.tax = tax;
     }
 
     public void setTax(Tax tax) {
         this.tax = tax;
     }
 
-    public double getPricePL() {
-        if (tax == null) {
-            throw new IllegalStateException("Tax strategy not set");
-        }
-
-        return pricePL + tax.calculateTax(pricePL);
+    public double recalculateTax(double cena) {
+        double tax = this.tax.calculateTax(cena);
+        return cena + tax;
     }
 
-    public double getPriceGB() {
-        if (tax == null) {
-            throw new IllegalStateException("Tax strategy not set");
-        }
+    public static void main(String[] args) {
+        OnlineShop shop = new OnlineShop(new TaxPL());
+        double pricePL = shop.recalculateTax(100.0);
+        System.out.println("Cena w Polsce to: " + pricePL);
 
-        return priceGB + tax.calculateTax(priceGB);
-    }
+        shop.setTax(new TaxD());
+        double priceD = shop.recalculateTax(100.0);
+        System.out.println("Cena w Niemczech to: " + priceD);
 
-    public double getPriceD() {
-        if (tax == null) {
-            throw new IllegalStateException("Tax strategy not set");
-        }
-
-        return priceD + tax.calculateTax(priceD);
+        shop.setTax(new TaxGB());
+        double priceUK = shop.recalculateTax(100.0);
+        System.out.println("Cena w Wielkiej Brytanii to: " + priceUK);
     }
 }
