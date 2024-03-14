@@ -1,5 +1,5 @@
 package zadanie2;
 
 public interface SendAd {
-    void send(String content, String customer);
+    void send(String content, String recipientInfo);
 }
