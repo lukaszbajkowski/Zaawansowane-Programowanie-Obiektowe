@@ -1,5 +1,5 @@
 package zadanie3;
-// ExtraIngredientDecorator.java
+
 public class ExtraIngredientDecorator extends PizzaDecorator {
     private final String ingredient;
     private final double cost;

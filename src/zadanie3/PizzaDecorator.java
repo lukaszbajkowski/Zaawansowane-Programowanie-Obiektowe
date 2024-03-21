@@ -1,6 +1,5 @@
 package zadanie3;
 
-// PizzaDecorator.java
 public abstract class PizzaDecorator implements Pizza {
     protected Pizza pizza;
 

@@ -1,6 +1,5 @@
 package zadanie3;
 
-// WithoutIngredientDecorator.java
 public class WithoutIngredientDecorator extends PizzaDecorator {
     private final String omittedIngredient;
 
