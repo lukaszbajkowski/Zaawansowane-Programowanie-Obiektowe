@@ -1,24 +1,25 @@
 package zadanie3;
 
-class WithoutIngredientDecorator extends PizzaDecorator {
-    private String ingredient;
+// WithoutIngredientDecorator.java
+public class WithoutIngredientDecorator extends PizzaDecorator {
+    private final String omittedIngredient;
 
-    public WithoutIngredientDecorator(Pizza pizza, String ingredient) {
+    public WithoutIngredientDecorator(Pizza pizza, String omittedIngredient) {
         super(pizza);
-        this.ingredient = ingredient;
+        this.omittedIngredient = omittedIngredient;
     }
 
     @Override
     public String getDescription() {
         String description = pizza.getDescription();
-        if (description.contains(ingredient)) {
-            description = description.replace(ingredient, "bez " + ingredient);
+        if (description.contains(omittedIngredient)) {
+            description = description.replace(", " + omittedIngredient, "");
         }
-        return description;
+        return description + ", without " + omittedIngredient;
     }
 
     @Override
     public double getCost() {
-        return pizza.getCost();
+        return super.getCost();
     }
 }

@@ -3,12 +3,16 @@ package zadanie3;
 public class Main {
     public static void main(String[] args) {
         Pizza pizza = new BasicPizza();
-        System.out.println("Opis: " + pizza.getDescription() + ", Koszt: " + pizza.getCost() + " zł");
+        System.out.println("Pizza: " + pizza.getDescription() + ", Cost: " + pizza.getCost() + " zł");
 
-        Pizza pizzaWithExtraCheese = new ExtraIngredientDecorator(pizza, "extra ser", 2.0);
-        System.out.println("Opis: " + pizzaWithExtraCheese.getDescription() + ", Koszt: " + pizzaWithExtraCheese.getCost() + " zł");
+        Pizza pizzaWithExtraCheese = new ExtraIngredientDecorator(pizza, "extra cheese", 2.0);
+        System.out.println("Pizza: " + pizzaWithExtraCheese.getDescription() + ", Cost: " + pizzaWithExtraCheese.getCost() + " zł");
 
-        Pizza pizzaWithoutOnions = new WithoutIngredientDecorator(pizzaWithExtraCheese, "cebula");
-        System.out.println("Opis: " + pizzaWithoutOnions.getDescription() + ", Koszt: " + pizzaWithoutOnions.getCost() + " zł");
+        Pizza pizzaWithoutOnions = new WithoutIngredientDecorator(pizzaWithExtraCheese, "onion");
+        System.out.println("Pizza: " + pizzaWithoutOnions.getDescription() + ", Cost: " + pizzaWithoutOnions.getCost() + " zł");
+
+        Pizza pizzaWithoutPepperAndOnion = new WithoutIngredientDecorator(pizza, "pepper");
+        pizzaWithoutPepperAndOnion = new WithoutIngredientDecorator(pizzaWithoutPepperAndOnion, "onion");
+        System.out.println("Pizza: " + pizzaWithoutPepperAndOnion.getDescription() + ", Cost: " + pizzaWithoutPepperAndOnion.getCost() + " zł");
     }
 }
